@@ -31,6 +31,9 @@ private:
 
 	FVector Velocity;
 
+	void ApplyRotation(float DeltaTime);
+	void UpdateTranslationWithVelocity(float DeltaTime);
+
 	// Car Mass in Kg;
 	UPROPERTY(EditAnywhere)
 	float Mass = 1000;
@@ -39,8 +42,14 @@ private:
 	UPROPERTY(EditAnywhere)
 	float MaxDrivingForce = 10000;
 
+	//Max Degree To rotate in Sec Deg/Sec
+	UPROPERTY(EditAnywhere)
+	float MaxDegreesPerSecond = 90;
+
 	void MoveForward(float Value);
+	void MoveRight(float Value);
 
 	float Throttle;
+	float Steering;
 
 };
